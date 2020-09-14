@@ -1,0 +1,70 @@
+﻿@page "/21"
+@inject HttpClient Http
+@inject NavigationManager NavigationManager
+
+<h1>BlackJack</h1>
+
+<p class="NPC">
+    <h3>Dealer</h3>
+    @if (DealerHit == 0)
+    {
+        <img class="playingCard" src="/imgs/gray_back.png" />
+        <img class="playingCard" src="/imgs/gray_back.png" />
+
+    }
+    @foreach (var item in DealerCards)
+    {
+        <img class="playingCard" src="@item" />
+    }
+    @if (DealerHit == 1)
+    {
+        <img class="playingCard" src="/imgs/gray_back.png" />
+    }
+</p>
+
+<h4>Dealer Score: @DealerScore</h4>
+
+<p class="Player">
+    <h3>Player</h3>
+    @if (playerHit == 0)
+    {
+        <img class="playingCard" src="/imgs/gray_back.png" />
+        <img class="playingCard" src="/imgs/gray_back.png" />
+
+    }
+    @foreach (var item in PlayerCards)
+    {
+        <img class="playingCard" src="@item" />
+    }
+</p>
+
+<h4>Player Score: @PlayerScore</h4>
+<h1>@message</h1>
+
+@if (PlayerScore < 21 && playerHit != 0)
+{
+    if (hold == false)
+    {
+        <button class="btn btn-success" @onclick="PlayerHit">Hit</button>
+        <button class="btn btn-danger" @onclick="Hold">Hold</button>
+    }
+}
+@if (playerHit == 0)
+{
+    <button class="btn btn-primary" @onclick="StartGame">Start Game</button>
+
+}
+@if (playerHit != 0)
+{
+    <button class="btn btn-primary" @onclick="NewGame">New Game</button>
+
+}
+
+<style>
+    .playingCard {
+        height: 300px;
+    }
+</style>
+
+<p>
+</p>
