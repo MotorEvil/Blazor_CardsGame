@@ -136,6 +136,10 @@ app {
         top: 0.5rem;
     }
 
+.playingCard {
+    height: 300px;
+}
+
 @media (max-width: 767.98px) {
     .main .top-row:not(.auth) {
         display: none;
@@ -148,6 +152,11 @@ app {
     .main .top-row a, .main .top-row .btn-link {
         margin-left: 0;
     }
+
+    .playingCard {
+        height: 150px;
+    }
+
 }
 
 @media (min-width: 768px) {
@@ -167,6 +176,7 @@ app {
         top: 0;
     }
 
+
     .main > div {
         padding-left: 2rem !important;
         padding-right: 1.5rem !important;
@@ -180,4 +190,5 @@ app {
         /* Never collapse the sidebar for wide screens */
         display: block;
     }
+
 }
