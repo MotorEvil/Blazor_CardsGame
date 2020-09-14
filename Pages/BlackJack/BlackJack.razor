@@ -2,6 +2,8 @@
 @inject HttpClient Http
 @inject NavigationManager NavigationManager
 
+
+
 <h1>BlackJack</h1>
 
 <p class="NPC">
@@ -20,9 +22,9 @@
     {
         <img class="playingCard" src="./imgs/gray_back.png" />
     }
+    <h4>Dealer Score: @DealerScore</h4>
 </p>
 
-<h4>Dealer Score: @DealerScore</h4>
 
 <p class="Player">
     <h3>Player</h3>
@@ -36,9 +38,9 @@
     {
         <img class="playingCard" src="@item" />
     }
+    <h4>Player Score: @PlayerScore</h4>
 </p>
 
-<h4>Player Score: @PlayerScore</h4>
 <h1>@message</h1>
 
 @if (PlayerScore < 21 && playerHit != 0)
@@ -59,12 +61,3 @@
     <button class="btn btn-primary" @onclick="NewGame">New Game</button>
 
 }
-
-<style>
-    .playingCard {
-        height: 300px;
-    }
-</style>
-
-<p>
-</p>
