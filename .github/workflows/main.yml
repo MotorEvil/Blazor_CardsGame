@@ -21,7 +21,9 @@ jobs:
 
     # publishes Blazor project to the release-folder
     - name: Publish .NET Core Project
-      run: dotnet publish Blazor_CardsGame.csproj -c Release -o release --nologo
+      run: 
+        cp wwwroot/index.html wwwroot/404.html
+        dotnet publish Blazor_CardsGame.csproj -c Release -o release --nologo
     
     # changes the base-tag in index.html from '/' to 'Blazor_CardsGame' to match GitHub Pages repository subdirectory
     - name: Change base-tag in index.html from / to Blazor_CardsGame
